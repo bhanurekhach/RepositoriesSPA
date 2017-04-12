@@ -1,0 +1,43 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Get GitHub Repositories</title>
+</head>
+<body>
+    <div>
+        <h2>Search by User Name</h2>
+        <input type="text" id="userName" size="5" />
+        <input type="button" value="Search" onclick="find();" />
+        <p id="response" />
+    </div>
+
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+    <script>
+        var uri = 'api/GetRepositories';
+        var website = "https://api.github.com/search/users?q=";
+
+    function find() {
+        var name = $('#userName').val();
+        $.ajax({
+            contentType: "application/json; charset=utf-8",
+            url: website + name,
+            type: "GET",
+            data: JSON.stringify(name),
+            success: function (result) {
+                $('#response').text(JSON.stringify(result));
+            } ,
+            error: function () {
+                alert("Fail");
+            }
+        });
+    }
+    </script>
+</body>
+</html>
+

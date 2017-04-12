@@ -1,0 +1,37 @@
+﻿.header{
+    color: darkblue;
+    font-family: 'Bookman Old Style';
+    font-size: 22px;
+    font-weight: bold;
+    padding-top: 15px;
+}
+
+.userText{
+    width: 250px;
+    height: 20px;
+    font-family: 'Book Antiqua';
+    font-size: 16px;
+}
+
+.searchStyle {
+    margin-left: 5px;
+    height: 26px;
+    background-color: lightgray;
+    color: black;
+    border: 2px solid #555555;
+    border-radius: 6px;
+}
+.searchStyle:hover {
+    background-color: whitesmoke;
+    color: black;
+}
+
+.showDetails {
+    display: inline;
+    font-family: 'Book Antiqua';
+    font-size: 18px;       
+}
+
+.noDetails {
+    display: none;
+}
